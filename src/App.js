@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { component } from "react";
+class App extends Component {
+    constructor()
+    super()
+    this.state = {
+        count = 0;
+    }
+}
+// this is where our mrthods will be defined 
+increment = () => {
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+}
+componentDidMount() {
+    //put code here
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(res => {
+            return res.json();
+        })
+        .then(date => {
+            console.log(data)
+        })
+
+
 }
 
-export default App;
+
+
+
+render() {
+        let { isLoaded, items } = this.state;
+        if (!isloaded) {
+            return <div > loading... < /div>;
+            else {
+                console.log('this isn item in a render method', items);
+                return ( <
+                    div >
+                    <
+                    div >
+                    <
+                    ul > {
+                        items.map(el => {
+                                return ( <
+                                    li >
+                                    Name; { el.name } | UserName: { el.username } |
+                                    <
+                                    a href = { 'https://@{el.webpage}' } > Webside < /a> <
+                                    /li>
+                                })
+                        } < /ul> <
+                        /div> <
+                        /div>
+                    )
+                }
+            }
+        }
